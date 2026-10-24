@@ -314,7 +314,7 @@ static int read_device_versions(int *andr, int *major, int *minor) {
          * read out of it. */
         printf("uname -r is missing Android version, trying getprop\n");
         char vendor_ver[16] = { 0 };
-        FILE *f = popen("getprop ro.vendor.build.version.release", "r");
+        FILE *f = popen("getprop ro.build.version.release", "r");
         if (f) {
             if (!fgets(vendor_ver, sizeof(vendor_ver), f))
                 vendor_ver[0] = '\0';
